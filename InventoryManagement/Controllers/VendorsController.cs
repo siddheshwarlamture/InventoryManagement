@@ -8,10 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using InventoryManagement.Data;
 using InventoryManagement.Models;
 using Microsoft.AspNetCore.Authorization;
+using InventoryManagement.GenericFiles;
 
 namespace InventoryManagement.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = ApplicationRoles.ADMIN)]
     public class VendorsController : Controller
     {
         private readonly ApplicationDbContext _context;
