@@ -8,14 +8,164 @@
 
 <h4>VendorViewModel</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+<div class="row"> 
+    <div class="col-5 ms-5 mt-3">
+       <label asp-for="Name"class="control-lable"></label>
+        <input asp-for="Name" class="form-control" />
+       </div>
+    <div class="col-5 ms-5 mt-3">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+    <div class="col-5 ms-3 mt-3 ">
+        <label asp-for="PhoneNo1" class="control-label"></label>
+        <input asp-for="PhoneNo1" class="form-control" />
+    </div>
+   <div class="col-5 ms-5 mt-3" >
+    <label asp-for="PhoneNo2" class="control-label"></label>
+    <input asp-for="PhoneNo2" class="form-control" />
+</div>
+<div class="col-5 ms-5 mt-3 ml-5">
+    <label asp-for="Address" class="control-label"></label>
+    <textarea class=" form-control"></textarea>
+        </div>
+    <div class="col-5 ms-3 mt-3 ml-5">
+        <label asp-for="PAnNo" class="control-label"></label>
+        <input asp-for="PAnNo" class="form-control" />
+    </div>
+    <div class="col-5 ms-3 mt-3 ml-5">
+        <label asp-for="GstNo" class="control-label"></label>
+        <input asp-for="GstNo" class="form-control" />
+    </div>
+    <div class="col-5 ms-3 mt-3 ps-3">
+        <label asp-for="Company" class="control-label"></label>
+        <select class="form-select">
+            <option  disabled selected></option>
+            <option></option>
+            <option></option>
+            <option></option>
+        </select>
+    </div>
+    <div class="col-5 ms-3 mt-3 ps-3">
+        <label asp-for="ReportVendor" class="control-label"></label>
+       <select class="form-select">
+           <option disabled Selected></option>
+        <option>Id</option>
+        <option>Name</option>
+        </select>
+       </div>
+    <div class="col-5 ms-3 mt-3 ps-3">
+        <label asp-for="VendorType" class="control-label"></label>
+        <select class="form-select">
+            <option  disabled selected></option>
+            <option>Sales</option>
+            <option>Purchase</option>
+        </select>
+    </div>
+    <div class="col-10 ms-5 mt-3 ps-3">
+        <label asp-for="Description" class="control-label"></label>
+        <textarea class=" form-control"></textarea>
+    </div>  
+</div>
+<br />
+<div class= "form-control">
+    <input type="submit" value="Create" class="btn btn-primary" />
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       @* <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
+            <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control"/>
+            
                 <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+                <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+          
+            <div class="form-group">
+                <label asp-for="PhoneNo1" class="control-label"></label>
+                <input asp-for="PhoneNo1" class="form-control" />
+                <span asp-validation-for="PhoneNo1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNo2" class="control-label"></label>
+                <input asp-for="PhoneNo2" class="form-control" />
+                <span asp-validation-for="PhoneNo2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PAnNo" class="control-label"></label>
+                <input asp-for="PAnNo" class="form-control" />
+                <span asp-validation-for="PAnNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GstNo" class="control-label"></label>
+                <input asp-for="GstNo" class="form-control" />
+                <span asp-validation-for="GstNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReportVendor" class="control-label"></label>
+                <input asp-for="ReportVendor" class="form-control" />
+                <span asp-validation-for="ReportVendor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company" class="control-label"></label>
+                <input asp-for="Company" class="form-control" />
+                <span asp-validation-for="Company" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VendorType" class="control-label"></label>
+                <input asp-for="VendorType" class="form-control" />
+                <span asp-validation-for="VendorType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -30,4 +180,4 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+}*@

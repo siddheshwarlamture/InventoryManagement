@@ -7,12 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using InventoryManagement.Data;
 using InventoryManagement.Models;
-using Microsoft.AspNetCore.Authorization;
-using InventoryManagement.GenericFiles;
 
 namespace InventoryManagement.Controllers
 {
-    [Authorize(Roles = ApplicationRoles.ADMIN)]
     public class VendorsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -59,7 +56,7 @@ namespace InventoryManagement.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] VendorViewModel vendorViewModel)
+        public async Task<IActionResult> Create([Bind("Id,Name,Email,PhoneNo1,PhoneNo2,Address,PAnNo,GstNo,ReportVendor,Company,VendorType,Description")] VendorViewModel vendorViewModel)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +88,7 @@ namespace InventoryManagement.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] VendorViewModel vendorViewModel)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Email,PhoneNo1,PhoneNo2,Address,PAnNo,GstNo,ReportVendor,Company,VendorType,Description")] VendorViewModel vendorViewModel)
         {
             if (id != vendorViewModel.Id)
             {
