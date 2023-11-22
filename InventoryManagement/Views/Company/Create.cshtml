@@ -1,0 +1,83 @@
+﻿@model InventoryManagement.Models.CompanyViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+<hr />
+<form asp-action="Create">
+<div class="row">
+   
+      
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group col-md-4">
+                <label class="control-label">Company Name</label>
+                <input asp-for="CompanyName" class="form-control" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="control-label">Transport Name</label>
+                <input asp-for="transportName" class="form-control" />
+                <span asp-validation-for="transportName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+        <div class="form-group col-md-4">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+        <div class="form-group col-md-4">
+                <label asp-for="State" class="control-label"></label>
+                <input asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+        <div class="form-group col-md-4">
+                <label asp-for="Country" class="control-label"></label>
+                <input asp-for="Country" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+        <div class="form-group col-md-5">
+                <label class="control-label">PhoneNo</label>
+                <input asp-for="PhoneNo" class="form-control" />
+                <span asp-validation-for="PhoneNo" class="text-danger"></span>
+            </div>
+        <div class="form-group col-md-5">
+                <label asp-for="Mobile" class="control-label"></label>
+                <input asp-for="Mobile" class="form-control" />
+                <span asp-validation-for="Mobile" class="text-danger"></span>
+            </div>
+        <div class="form-group col-md-4">
+                <label class="control-label">Email Id</label>
+                <input asp-for="EmailId" class="form-control" />
+                <span asp-validation-for="EmailId" class="text-danger"></span>
+            </div>
+        <div class="form-group col-md-4">
+                <label class="control-label">Zip Code</label>
+                <input asp-for="ZipCode" class="form-control" />
+                <span asp-validation-for="ZipCode" class="text-danger"></span>
+            </div>
+        <div class="form-group col-md-4">
+                <label class="control-label">Gst No</label>
+                <input asp-for="GstNo" class="form-control" />
+                <span asp-validation-for="GstNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="text-end btn btn-primary" />
+            </div>
+      
+    </div>
+ </form>
+
+<div>
+    <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

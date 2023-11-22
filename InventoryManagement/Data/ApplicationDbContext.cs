@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using InventoryManagement.Models;
 
 namespace InventoryManagement.Data
 {
@@ -14,5 +15,7 @@ namespace InventoryManagement.Data
         public DbSet<InventoryManagement.Models.VendorViewModel> Vendors { get; set; } = default!;
 
         public DbSet<InventoryManagement.Models.ApplicationUserViewModel> ApplicationUsers { get; set; }
+
+        public DbSet<InventoryManagement.Models.CompanyViewModel> CompanyViewModel { get; set; } = default!;
     }
 }
