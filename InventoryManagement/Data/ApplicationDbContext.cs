@@ -17,5 +17,7 @@ namespace InventoryManagement.Data
         public DbSet<InventoryManagement.Models.ApplicationUserViewModel> ApplicationUsers { get; set; }
 
         public DbSet<InventoryManagement.Models.CompanyViewModel> CompanyViewModel { get; set; } = default!;
+
+        public DbSet<UnitsViewModel> Units { get; set; } = default!;
     }
 }
