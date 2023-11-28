@@ -19,5 +19,7 @@ namespace InventoryManagement.Data
         public DbSet<InventoryManagement.Models.CompanyViewModel> CompanyViewModel { get; set; } = default!;
 
         public DbSet<UnitsViewModel> Units { get; set; } = default!;
+
+        public DbSet<ProductsViewModel> Products { get; set; } = default!;
     }
 }
